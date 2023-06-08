@@ -11,9 +11,15 @@ function Menu() {
     document.body.classList.remove('backdrop');
   }
 
+  function closeWithEscape(event) {
+    const { key } = event;
+    return key === 'Escape' ? close() : null;
+  }
+
   return {
     open,
-    close
+    close,
+    closeWithEscape
   }
 }
 
@@ -21,3 +27,4 @@ const menu = Menu();
 
 document.querySelector('.open-menu').addEventListener('click', menu.open);
 document.querySelector('.close-menu').addEventListener('click', menu.close);
+document.addEventListener('keydown', menu.closeWithEscape);
