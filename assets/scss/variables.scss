@@ -1,0 +1,49 @@
+$black: #000;
+$white: #fff;
+$gray: #777;
+$yellow: #eab642;
+
+@mixin font-title($size, $line: 1) {
+  color: $white;
+  font-weight: 900;
+  line-height: $line;
+  font-size: $size;
+}
+
+@mixin font-description($size) {
+  color: $gray;
+  font-weight: 400;
+  line-height: 1.5;
+  font-size: $size;
+}
+
+@mixin font-link($size, $color: #fff,  $p-block: 1rem, $p-inline: 2rem) {
+  color: $color;
+  font-size: $size;
+  font-weight: 400;
+  padding: $p-block $p-inline;
+  text-decoration: none;
+  width: fit-content;
+  display: block;
+}
+
+@mixin button-underline($color: $yellow, $p-block: 1rem, $p-inline: 2rem) {
+  border-bottom: 2px solid $color;
+  @include font-link(2rem, $color, $p-block, $p-inline);
+}
+
+@mixin responsive($type) {
+  @if $type == t {
+    @media (max-width: 850px) {
+      @content;
+    }
+  } @else if $type == m {
+    @media (max-width: 600px) {
+      @content;
+    }
+  } @else {
+    @media (max-width: 425px) {
+      @content;
+    }
+  }
+}

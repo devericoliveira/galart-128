@@ -1,0 +1,85 @@
+#team {
+  margin-bottom: 10rem; 
+  
+  .team-header {
+    margin-bottom: 3.6rem;
+
+    h2 {
+      text-align: center;
+      @include font-title(5.6rem, 1.1);
+      @include responsive(t) {
+        @include font-title(4.4rem, 1.1)
+      }
+    }
+  }
+
+  .team-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: max-content;
+    gap: 3.6rem;
+    text-align: center;
+
+    li:hover {
+      .team-social-hover {
+        top: calc(35rem - 50%);    
+        opacity: 1;
+      }
+    }
+
+    .team-image {
+        position: relative;
+        min-height: 35rem;
+        background-color: $yellow;
+        margin-bottom: 3.6rem;
+
+        &::before {
+          content: "";
+          display: block;
+          position: absolute;
+          inset: 0;
+          background-color: rgba(0, 0, 0, 0.5);
+        }
+    }
+
+    .team-social-hover {
+      display: flex;
+      gap: 1.6rem;
+      position: absolute;
+      top: 0;
+      opacity: 0;    
+      left: 50%;
+      z-index: 2;
+      transform: translate(-50%, -50%);
+      transition: 0.7s all;
+
+      @include responsive(t) {
+       transition: none;  
+       top: 50%;
+       opacity: 1; 
+      }
+
+      a {
+        color: $white;
+        font-size: 2.4rem;
+      }
+    }
+
+    h3 {
+      margin-bottom: 1.6rem;
+      @include font-title(3rem);
+    }
+
+    span {
+      @include font-description(2rem);
+    }
+
+    @include responsive(t) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include responsive(m) {
+      grid-template-columns: 1fr;
+    }
+  }
+}

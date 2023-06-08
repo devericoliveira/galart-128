@@ -1,0 +1,98 @@
+footer {
+  margin-inline: 3.6rem;
+  .container {
+    border: 1px solid $white;
+    outline: 2px solid rgb(145, 255, 145);
+    padding: 5rem;
+    margin-bottom: 10rem;
+  }
+
+  img {
+    margin: 0 auto 3.6rem;
+  }
+
+  .contact-list-social {
+    display: flex;
+    gap: 1.6rem;
+    justify-content: center;
+    margin-bottom: 1.6rem;
+
+    a {
+      @include font-link(2rem);
+    }
+
+    @include responsive(mm) {
+      flex-direction: column;
+      justify-content: initial;
+      align-items: center;
+    }
+  }
+
+  form {
+    max-width: 40rem;
+    margin: 0 auto 3.6rem;
+    display: flex;
+    gap: 3.6rem;
+
+    fieldset {
+      flex: 1;
+      border: 0;
+    
+      div {
+        height: 100%;
+      }
+    }
+
+    input {
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+      border: 0;
+      border-bottom: 2px solid $white;
+      color: $white;
+      font-size: 2rem;
+      
+      &::placeholder {
+        color: $white;
+      }
+
+      &:focus {
+        outline-color: rgb(145, 255, 145);
+      }
+    }
+
+    button {
+      cursor: pointer;
+      color: $yellow;
+      border: 0;
+      border-bottom: 2px solid $yellow;
+      padding: 1rem 2rem;
+      background-color: transparent;
+    }
+
+    @include responsive(mm) {
+      flex-direction: column;
+    }
+  }
+
+  .menu-footer {
+    margin-bottom: 3.6rem;
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+
+      a {
+        text-transform: lowercase;
+        @include font-link(2rem, $white)
+      }
+    }
+  }
+
+  .copy p {
+    text-align: center;
+    @include font-description(2rem);
+  }
+}

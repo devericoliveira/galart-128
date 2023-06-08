@@ -1,0 +1,29 @@
+#home {
+  margin-block: 10rem;
+
+  h1 {
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: center;
+    @include font-title(8rem, 1.1);
+    @include responsive(t) {
+      @include font-title(6.4rem, 1.1);
+    }
+    @include responsive(mm) {
+      @include font-title(5rem, 1.1);
+    }
+  }
+
+  p {
+    max-width: 70ch;
+    text-align: center;
+    margin: 3.6rem auto 3.6rem;
+    @include font-description(2rem)
+  }
+
+  .home-image {
+    max-width: 60%;
+    min-width: 30rem;
+    margin: 0 auto;
+  }
+}
