@@ -12,37 +12,43 @@
 </head>
 <body>
   <!-- https://webflow.com/templates/html/galart-128-designer-website-template -->
-  <!-- <header>
-    <div>
-      <a href="#">
-        <img src="./assets/images/logo-galart.svg" alt="brand galart." />
-      </a>
+  <header id="menu">
+    <div class="container">
+      <div>
+        <a href="#">
+          <img src="./assets/images/logo-galart.svg" alt="brand galart." />
+        </a>
 
-      <button class="close-menu">X</button>
+        <button class="close-menu">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <nav aria-label="navegacao principal">
+        <ul>
+          <li>
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <a href="#">About</a>
+          </li>
+          <li>
+            <a href="#">Projects</a>
+          </li>
+          <li>
+            <a href="#">What we do</a>
+          </li>
+          <li>
+            <a href="#">Contact</a>
+          </li>
+        </ul>
+      </nav>
+
+      <button class="open-menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
     </div>
-
-    <nav>
-      <ul>
-        <li>
-          <a href="#">Home</a>
-        </li>
-        <li>
-          <a href="#">About</a>
-        </li>
-        <li>
-          <a href="#">Projects</a>
-        </li>
-        <li>
-          <a href="#">What we do</a>
-        </li>
-        <li>
-          <a href="#">Contact</a>
-        </li>
-      </ul>
-    </nav>
-
-    <button class="open-menu"></button>
-  </header> -->
+  </header>
 
   <main>
     <section id="home">
@@ -269,5 +275,7 @@
       </div>
     </div>
   </footer>
+
+  <script src="./assets/js/index.js"></script>
 </body>
 </html>

@@ -13,6 +13,18 @@ body {
   background-color: #000;
 }
 
+body.backdrop {
+  position: relative;
+}
+body.backdrop::before {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
 h1, h2, h3, a, p, span {
   font-family: Yantramanav, sans-serif;
 }
@@ -38,6 +50,106 @@ h1, h2, h3, a, p, span {
 img {
   max-width: 100%;
   display: block;
+}
+
+#menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  padding-block: 2rem;
+  background-color: #000;
+}
+#menu .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#menu .container .close-menu {
+  display: none;
+  cursor: pointer;
+  font-size: 2rem;
+  background-color: transparent;
+  border: 0;
+  color: #fff;
+}
+#menu .container .open-menu {
+  display: none;
+  cursor: pointer;
+  font-size: 2rem;
+  background-color: transparent;
+  border: 0;
+  color: #fff;
+}
+@media (max-width: 850px) {
+  #menu .container .open-menu {
+    display: block;
+  }
+}
+
+#menu nav ul {
+  display: flex;
+  gap: 1.6rem;
+}
+#menu nav li a {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 400;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  width: fit-content;
+  display: block;
+}
+#menu nav li a:hover {
+  color: #eab642;
+  font-size: 2rem;
+  font-weight: 400;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  width: fit-content;
+  display: block;
+}
+@media (max-width: 850px) {
+  #menu nav {
+    display: none;
+  }
+}
+
+#menu.active {
+  width: 40%;
+  right: initial;
+  height: 100vh;
+}
+#menu.active .container {
+  width: 100%;
+  flex-direction: column;
+  justify-content: initial;
+  padding-inline: 1.6rem;
+}
+#menu.active .container div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#menu.active .container .close-menu {
+  display: block;
+}
+#menu.active .container .open-menu {
+  display: none;
+}
+#menu.active nav {
+  margin-top: 7.2rem;
+  display: block;
+}
+#menu.active nav ul {
+  flex-direction: column;
+}
+@media (max-width: 600px) {
+  #menu.active {
+    width: 90%;
+  }
 }
 
 #home {

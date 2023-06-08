@@ -32,6 +32,14 @@ $yellow: #eab642;
   @include font-link(2rem, $color, $p-block, $p-inline);
 }
 
+@mixin button-mobile() {
+  cursor: pointer;
+  font-size: 2rem;
+  background-color: transparent;
+  border: 0;
+  color: $white;
+}
+
 @mixin responsive($type) {
   @if $type == t {
     @media (max-width: 850px) {

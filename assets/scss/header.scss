@@ -1,0 +1,91 @@
+#menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 4;
+
+  padding-block: 2rem;
+  background-color: $black;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    .close-menu {
+      display: none;
+      @include button-mobile();
+    }
+
+    .open-menu {
+      display: none;
+      @include button-mobile();
+      
+      @include responsive(t) {
+        display: block;
+      }
+    }
+  }
+}
+
+#menu nav {
+  ul {
+    display: flex;
+    gap: 1.6rem;
+  }
+
+  li a {
+    @include font-link(2rem);
+    
+    &:hover {
+      @include font-link(2rem, $yellow);
+    }
+  }
+
+  @include responsive(t) {
+    display: none;
+  }
+}
+
+// MOBILE MENU ATIVO
+#menu.active {
+  width: 40%;
+  right: initial;
+  height: 100vh;
+  
+  .container {
+    width: 100%;
+    flex-direction: column;
+    justify-content: initial;
+    padding-inline: 1.6rem;
+  
+    div {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .close-menu {
+      display: block;
+    }
+
+    .open-menu {
+      display: none;
+    }
+  }
+
+  nav {
+    margin-top: 7.2rem;
+    display: block;
+  
+    ul {
+      flex-direction: column;
+    }
+  }
+
+  @include responsive(m) {
+    width: 90%;
+  }
+}
